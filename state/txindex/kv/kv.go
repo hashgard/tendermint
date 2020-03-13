@@ -250,9 +250,9 @@ func (txi *TxIndex) Search(q *query.Query) ([]*types.TxResult, error) {
 	// sort by height & index by default
 	sort.Slice(results, func(i, j int) bool {
 		if results[i].Height == results[j].Height {
-			return results[i].Index < results[j].Index
+			return results[i].Index > results[j].Index
 		}
-		return results[i].Height < results[j].Height
+		return results[i].Height > results[j].Height
 	})
 
 	return results, nil
