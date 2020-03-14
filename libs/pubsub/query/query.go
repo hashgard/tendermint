@@ -25,8 +25,11 @@ var (
 
 // Query holds the query string and the query parser.
 type Query struct {
-	str    string
-	parser *QueryParser
+	str        string
+	parser     *QueryParser
+	Page       int
+	PerPage    int
+	TotalCount int
 }
 
 // Condition represents a single condition within a query and consists of tag

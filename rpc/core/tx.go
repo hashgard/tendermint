@@ -64,13 +64,14 @@ func TxSearch(ctx *rpctypes.Context, query string, prove bool, page, perPage int
 	if err != nil {
 		return nil, err
 	}
-
+	q.Page = page
+	q.PerPage = perPage
 	results, err := txIndexer.Search(q)
 	if err != nil {
 		return nil, err
 	}
 
-	totalCount := len(results)
+	totalCount := q.TotalCount
 	perPage = validatePerPage(perPage)
 	page, err = validatePage(page, perPage, totalCount)
 	if err != nil {

@@ -237,8 +237,12 @@ func (txi *TxIndex) Search(q *query.Query) ([]*types.TxResult, error) {
 			filteredHashes = txi.match(c, startKeyForCondition(c, height), filteredHashes, false)
 		}
 	}
+	q.TotalCount = len(filteredHashes)
+	if q.Page < 30 {
+		return txi.quickSearch(q, filteredHashes)
+	}
 
-	results := make([]*types.TxResult, 0, len(filteredHashes))
+	results := make([]*types.TxResult, 0, q.TotalCount)
 	for _, h := range filteredHashes {
 		res, err := txi.Get(h)
 		if err != nil {
@@ -258,6 +262,46 @@ func (txi *TxIndex) Search(q *query.Query) ([]*types.TxResult, error) {
 	return results, nil
 }
 
+func (txi *TxIndex) quickSearch(q *query.Query, filteredHashes map[string][]byte) ([]*types.TxResult, error) {
+	perPage := q.Page * q.PerPage
+	results := make([]*types.TxResult, 0, perPage)
+	i := 0
+	sorted := false
+	for _, h := range filteredHashes {
+		res, err := txi.Get(h)
+		if err != nil {
+			return nil, errors.Wrapf(err, "failed to get Tx{%X}", h)
+		}
+		if i < perPage {
+			results = append(results, res)
+		} else {
+			if i == perPage {
+				QuickSort(results)
+				sorted = true
+			}
+			if res.Height > results[perPage-1].Height {
+				results[perPage-1] = res
+				QuickSort(results)
+			}
+		}
+		i += 1
+
+	}
+	if sorted {
+		return results, nil
+	}
+
+	QuickSort(results)
+	return results, nil
+}
+func QuickSort(results []*types.TxResult) {
+	sort.Slice(results, func(i, j int) bool {
+		if results[i].Height == results[j].Height {
+			return results[i].Index > results[j].Index
+		}
+		return results[i].Height > results[j].Height
+	})
+}
 func lookForHash(conditions []query.Condition) (hash []byte, err error, ok bool) {
 	for _, c := range conditions {
 		if c.Tag == types.TxHashKey {
