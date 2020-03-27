@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"net"
 	"net/http"
 	"net/url"

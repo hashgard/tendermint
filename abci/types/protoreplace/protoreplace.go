@@ -5,7 +5,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	"os/exec"
 	"regexp"

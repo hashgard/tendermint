@@ -3,7 +3,7 @@ package armor
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 
 	"golang.org/x/crypto/openpgp/armor"
 )

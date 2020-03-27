@@ -3,7 +3,7 @@ package privval
 import (
 	"encoding/base64"
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	"testing"
 	"time"

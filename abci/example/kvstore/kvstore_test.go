@@ -3,7 +3,7 @@ package kvstore
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"sort"
 	"testing"
 

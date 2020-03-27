@@ -3,7 +3,7 @@ package state
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"time"
 
 	"github.com/tendermint/tendermint/types"

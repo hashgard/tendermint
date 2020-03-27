@@ -1,7 +1,7 @@
 package config
 
 import (
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	"path/filepath"
 	"strings"

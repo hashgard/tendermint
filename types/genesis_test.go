@@ -1,7 +1,7 @@
 package types
 
 import (
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	"testing"
 

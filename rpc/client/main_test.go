@@ -1,7 +1,7 @@
 package client_test
 
 import (
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	"testing"
 

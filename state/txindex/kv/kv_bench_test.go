@@ -3,7 +3,7 @@ package kv
 import (
 	"crypto/rand"
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"testing"
 
 	abci "github.com/tendermint/tendermint/abci/types"

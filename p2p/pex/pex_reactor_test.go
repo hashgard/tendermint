@@ -2,7 +2,7 @@ package pex
 
 import (
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	"path/filepath"
 	"testing"

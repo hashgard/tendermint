@@ -5,7 +5,7 @@ package common
 import (
 	"bytes"
 	fmt "fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	testing "testing"
 

@@ -3,8 +3,8 @@ package rpcserver
 import (
 	"crypto/tls"
 	"fmt"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"io"
-	"io/ioutil"
 	"net"
 	"net/http"
 	"sync"

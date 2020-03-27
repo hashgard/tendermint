@@ -3,8 +3,8 @@ package cli
 import (
 	"bytes"
 	"fmt"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 )

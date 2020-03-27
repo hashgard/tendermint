@@ -3,7 +3,7 @@ package rpcserver_test
 import (
 	"bytes"
 	"encoding/json"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"strings"

@@ -3,7 +3,7 @@ package log_test
 import (
 	"bytes"
 	"errors"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"math"
 	"regexp"
 	"testing"

@@ -2,7 +2,7 @@ package kv
 
 import (
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	"testing"
 

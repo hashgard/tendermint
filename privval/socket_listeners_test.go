@@ -1,7 +1,7 @@
 package privval
 
 import (
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"net"
 	"os"
 	"testing"

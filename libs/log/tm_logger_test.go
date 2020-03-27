@@ -2,7 +2,7 @@ package log_test
 
 import (
 	"bytes"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"strings"
 	"testing"
 

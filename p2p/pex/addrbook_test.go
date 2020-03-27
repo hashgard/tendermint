@@ -3,7 +3,7 @@ package pex
 import (
 	"encoding/hex"
 	"fmt"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"math"
 	"os"
 	"testing"

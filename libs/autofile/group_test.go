@@ -1,8 +1,8 @@
 package autofile
 
 import (
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"io"
-	"io/ioutil"
 	"os"
 	"testing"
 

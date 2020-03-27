@@ -3,7 +3,7 @@ package consensus
 import (
 	"bytes"
 	"crypto/rand"
-	"io/ioutil"
+	"github.com/tendermint/tendermint/rpc/ioutil"
 	"os"
 	"path/filepath"
 
